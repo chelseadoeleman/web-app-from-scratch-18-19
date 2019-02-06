@@ -21,6 +21,12 @@
 
 ## Resources
 
+https://unsplash.com/developers
+https://unsplash.com/documentation
+https://github.com/unsplash/unsplash-js
+https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query
+https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/
+
 ## Credits
 
 ## Checklist
