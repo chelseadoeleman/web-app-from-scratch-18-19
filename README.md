@@ -73,12 +73,12 @@ Before this assignment I've worked once with an api. So although I knew what to 
 - [x] Show images in a slider
 - [x] Add a little bit of styling to the application
 - [x] Retrieve more pages/results from the API. 
-[ ]   Add snappoints to the images
+- [ ]   Add snappoints to the images
 - [x] Add another API (mapbox)
 - [x] Add location from image into mapbox
-[ ]   Convert location to longitude and latitude
-[ ]   Add pins to the location on the map
-[ ]   Remove pop-up message when location is unknown with hover over image
+- [ ]   Convert location to longitude and latitude
+- [ ]   Add pins to the location on the map
+- [ ]   Remove pop-up message when location is unknown with hover over image
 - [x] Write a readme.md
 
 ## License
