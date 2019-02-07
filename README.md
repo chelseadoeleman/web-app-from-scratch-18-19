@@ -41,7 +41,7 @@ There isn't a server build behind it yet. But feel free to do so.
 
 In the application you can scroll through a slider, to see different images that can be found on [unsplash](https://unsplash.com/).Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author has given their photo(s). 
 
-![The Application]()
+![The Application](docs/app.png)
 
 ## Learning process
 
