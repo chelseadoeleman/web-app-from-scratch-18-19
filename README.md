@@ -67,19 +67,19 @@ Before this assignment I've worked once with an api. So although I knew what to 
 *   **Tim:** For helping with the header, to be able to send more requests.
 
 ## Checklist
-[X] Find an API of your interest
-[X] Retrieve data from the API asynchronous. 
-[X] Store data in an object (without parse, because data object are not defined as a string)
-[X] Show images in a slider
-[X] Add a little bit of styling to the application
-[X] Retrieve more pages/results from the API. 
+- [x] Find an API of your interest
+- [x] Retrieve data from the API asynchronous. 
+- [x] Store data in an object (without parse, because data object are not defined as a string)
+- [x] Show images in a slider
+- [x] Add a little bit of styling to the application
+- [x] Retrieve more pages/results from the API. 
 [ ]   Add snappoints to the images
-[X] Add another API (mapbox)
-[X] Add location from image into mapbox
+- [x] Add another API (mapbox)
+- [x] Add location from image into mapbox
 [ ]   Convert location to longitude and latitude
 [ ]   Add pins to the location on the map
 [ ]   Remove pop-up message when location is unknown with hover over image
-[x ] Write a readme.md
+- [x] Write a readme.md
 
 ## License
 This repository is licensed as [MIT](LICENSE) by [Chelsea Doeleman](https://github.com/chelseadoeleman).
