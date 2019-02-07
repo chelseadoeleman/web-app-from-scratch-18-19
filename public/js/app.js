@@ -24,17 +24,25 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 numbers.map(async page => {
     try {
         const response = await fetch(`${url}${unsplash.access}&page=${page}&per_page=30`, {headers: {"X-Ratelimit-Limit": "1000"}})
+        // json already an object - cannot parse
         const results = await response.json()
         results.forEach(result => {
-            const location = result.user && result.user.location || undefined
-            const url =  result.urls.regular
+            
+            const data = {
+                photo: result.urls.regular,
+                location: result.user && result.user.location || undefined
+            }
+
+            const url =  data.photo
+            const location = data.location
             let img = document.createElement("img")
+
             img.setAttribute("src", url)
-
             img.addEventListener('click', function () {
-                geocoder.query(location)
+                location === undefined ? 
+                alert("Location Unknown")
+                : geocoder.query(location)
             })
-
             showData.append(img)
 
         })
