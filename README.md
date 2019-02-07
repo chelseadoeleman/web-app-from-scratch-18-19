@@ -51,15 +51,15 @@ Before this assignment I've worked once with an api. So although I knew what to 
 ## Resources
 
 **API**
-[Unsplash](https://unsplash.com/developers)
-[Mapbox](https://www.mapbox.com/)
+* [Unsplash](https://unsplash.com/developers)
+* [Mapbox](https://www.mapbox.com/)
 
 **Resources**
-[Unsplash developers](https://unsplash.com/developers)
-[Unsplash documentation](https://unsplash.com/documentation)
-[Unsplash github](https://github.com/unsplash/unsplash-js)
-[Unsplash mapbox query](https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query)
-[Unsplash geocoder](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
+* [Unsplash developers](https://unsplash.com/developers)
+* [Unsplash documentation](https://unsplash.com/documentation)
+* [Unsplash github](https://github.com/unsplash/unsplash-js)
+* [Unsplash mapbox query](https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query)
+* [Unsplash geocoder](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
 
 ## Credits
 
