@@ -4,7 +4,6 @@
 
 ![Unsplash Api]()
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 
 ## Table of Contents
 * [How to install](#how-to-install) 
@@ -46,6 +45,7 @@ In the application you can scroll through a slider, to see different images that
 
 ## Learning process
 
+Before this assignment I've worked once with an api. So although I knew what to do I always have trouble getting started. However when I retrieved the data everything ran smoothly. I had fun while making the image slider. And because I wanted to do more with the slider I decided to look at another API. This time mapbox. Getting started went quite smoothly and adding a search bar to. However I had trouble with assigning the location to the searchbox. Together with Maikel I finally figured it out and now it's up and running! I do want to add pinmarks in the future, but before I can do this I have to get my location in longitude and latitude... 
 
 
 ## Resources
