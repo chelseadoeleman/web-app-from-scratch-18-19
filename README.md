@@ -40,34 +40,46 @@ There isn't a server build behind it yet. But feel free to do so.
 
 ## Walktrough the application
 
-In the application you can scroll through a slider, to see different images that can be found on [unsplash]().
-Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author gave their photo. 
+In the application you can scroll through a slider, to see different images that can be found on [unsplash](https://unsplash.com/).Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author has given their photo(s). 
+
+![The Application]()
 
 ## Learning process
 
+
+
 ## Resources
 
-https://unsplash.com/developers
-https://unsplash.com/documentation
-https://github.com/unsplash/unsplash-js
-https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query
-https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/
+**API**
+[Unsplash](https://unsplash.com/developers)
+[Mapbox](https://www.mapbox.com/)
+
+**Resources**
+[Unsplash developers](https://unsplash.com/developers)
+[Unsplash documentation](https://unsplash.com/documentation)
+[Unsplash github](https://github.com/unsplash/unsplash-js)
+[Unsplash mapbox query](https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query)
+[Unsplash geocoder](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
 
 ## Credits
 
+*   **Maikel:** For helping with mapbox.
+*   **Tim:** For helping with the header, to be able to send more requests.
+
 ## Checklist
-[ x ]   Find an API of your interest
-[ x ]   Retrieve data from the API asynchronous. 
-[ x ]   Store data in an object (without parse, because data object are not defined as a string)
-[ x ]   Show images in a slider
-[ x ]   Add a little bit of styling to the application
-[   ]   Add snappoints to the images
-[ x ]   Add another API (mapbox)
-[ x ]   Add location from image into mapbox
-[   ]   Convert location to longitude and latitude
-[   ]   Add pins to the location on the map
-[   ]   Remove pop-up message when location is unknown with hover over image
-[ x ]   Write a readme.md
+[x] Find an API of your interest
+[x] Retrieve data from the API asynchronous. 
+[x] Store data in an object (without parse, because data object are not defined as a string)
+[x] Show images in a slider
+[x] Add a little bit of styling to the application
+[x] Retrieve more pages/results from the API. 
+[ ]   Add snappoints to the images
+[x] Add another API (mapbox)
+[x] Add location from image into mapbox
+[ ]   Convert location to longitude and latitude
+[ ]   Add pins to the location on the map
+[ ]   Remove pop-up message when location is unknown with hover over image
+[x] Write a readme.md
 
 ## License
 This repository is licensed as [MIT](LICENSE) by [Chelsea Doeleman](https://github.com/chelseadoeleman).
