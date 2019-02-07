@@ -7,6 +7,7 @@
 
 ## Table of Contents
 * [How to install](#how-to-install) 
+* [Unsplash API](#unsplash-api)
 * [Walktrough the application](#walk-trough-the-application) 
 * [Learning process](#learning-process)
 * [Resources](#resources)
@@ -34,18 +35,24 @@ Install the dependencies in [package.json](./client/package.json)
 npm install
 ```
 
-There isn't a server build behind it yet. But feel free to do so. 
+There isn't a server build behind it yet, but feel free to do so. 
+
+## Learning process
+
+The unsplash API 🐒 is pretty straight forward and the results are in JSON. I really liked the image url object, in the API, where you can choose between five different image resolutions. I also found the most prominent color code in hexadecimals quite interesting. However I coudn't come up with a concept thus far to includie this data object. 
+
+The location was also very interesting, however not always defined. Because the location was available I decided to add the mapbox API to the application. 
 
 
 ## Walktrough the application
 
-In the application you can scroll through a slider, to see different images that can be found on [unsplash](https://unsplash.com/).Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author has given their photo(s). 
+In the application you can scroll through a slider, to see different images that can be found on [unsplash](https://unsplash.com/). Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author has given their photo(s). 
 
 ![The Application](docs/app.png)
 
 ## Learning process
 
-Before this assignment I've worked once with an api. So although I knew what to do I always have trouble getting started. However when I retrieved the data everything ran smoothly. I had fun while making the image slider. And because I wanted to do more with the slider I decided to look at another API. This time mapbox. Getting started went quite smoothly and adding a search bar to. However I had trouble with assigning the location to the searchbox. Together with Maikel I finally figured it out and now it's up and running! I do want to add pinmarks in the future, but before I can do this I have to get my location in longitude and latitude... 
+Before this assignment I've worked once with an api. So although I knew what to do I always have trouble getting started. However when I retrieved the data everything ran smoothly. I had fun while making the image slider. And because I wanted to do more with the slider I decided to look at another API. This time Mapbox, because the Google maps API isn't available for free anymore ☹️. Getting started with Mapbox went quite smoothly and adding a search bar too. However I had trouble assigning the location to the searchbox. Together with Maikel I finally figured it out and now it's up and running! I do want to add pinmarks in the future, but before I can do this I have to get my location in longitude and latitude... 
 
 
 ## Resources

@@ -32,7 +32,7 @@ iframe {
     display: block;
 }
 
- button {
+button {
     font-size: inherit;
     cursor: pointer;
 }

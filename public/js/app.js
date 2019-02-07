@@ -23,7 +23,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 numbers.map(async page => {
     try {
-        const response = await fetch(`${url}${unsplash.access}&page=${page}&per_page=30`, {headers: {"X-Ratelimit-Limit": "1000"}})
+        const response = await fetch(`${url}${unsplash.access}&page=${page}&per_page=30`, {
+            headers: {"X-Ratelimit-Limit": "1000"}
+        })
         // json already an object - cannot parse
         const results = await response.json()
         results.forEach(result => {
