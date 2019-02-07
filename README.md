@@ -37,9 +37,9 @@ npm install
 
 There isn't a server build behind it yet, but feel free to do so. 
 
-## Learning process
+## Unsplash API 🐒
 
-The unsplash API 🐒 is pretty straight forward and the results are in JSON. I really liked the image url object, in the API, where you can choose between five different image resolutions. I also found the most prominent color code in hexadecimals quite interesting. However I coudn't come up with a concept thus far to includie this data object. 
+The unsplash API is pretty straight forward and the results are in JSON. I really liked the image url object, in the API, where you can choose between five different image resolutions. I also found the most prominent color code in hexadecimals quite interesting. However I coudn't come up with a concept thus far to includie this data object. 
 
 The location was also very interesting, however not always defined. Because the location was available I decided to add the mapbox API to the application. 
 
