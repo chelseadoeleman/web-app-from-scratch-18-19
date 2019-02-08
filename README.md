@@ -52,7 +52,12 @@ In the application you can scroll through a slider, to see different images that
 
 **NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
 
-![The Application](docs/app.png)
+![Interaction](docs/interaction.png)
+
+In [app.js](public/js/app.js) you can find all the logic 
+Here is an abstract overview what happens in the application
+
+![Actor](docs/actordiagram.png)
 
 ## Learning process
 
