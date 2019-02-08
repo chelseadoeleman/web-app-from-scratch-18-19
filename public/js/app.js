@@ -25,7 +25,7 @@ map.addControl(geocoder)
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // Map over page numbers to get the requested pages
-numbers.map(async page => {
+numbers.forEach(async page => {
     try {
         const response = await fetch(`${url}${unsplash.access}&page=${page}&per_page=30`, 
         {
