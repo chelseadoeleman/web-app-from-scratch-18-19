@@ -48,7 +48,7 @@ numbers.forEach(async page => {
 
             img.setAttribute("src", url)
             // On click fetch the location of the photo and send to mapbox query
-            img.addEventListener('click', function () {
+            img.addEventListener('click', () => {
                 location === undefined ? 
                 alert("Location Unknown")
                 // Add query function to pass the location to mapbox
