@@ -50,6 +50,8 @@ At first I only could get ten results per page. However in the documentation I f
 
 In the application you can scroll through a slider, to see different images that can be found on [unsplash](https://unsplash.com/). Next to the unsplash image slider you can find a map of the world. When clicking on an image, you will get redirected to that location where the photo was either uploaded or taken. Depending on what location the author has given their photo(s). 
 
+**NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
+
 ![The Application](docs/app.png)
 
 ## Learning process
