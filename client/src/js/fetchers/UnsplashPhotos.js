@@ -1,5 +1,6 @@
-
 import { times } from '../helpers/helpers.js'
+import { Fetcher } from '../components/Fetcher.js'
+import { getUnsplashUrl } from '../helpers/getUnsplashUrl.js'
 export class UnsplashPhotos {
     constructor () {
         this.render()
@@ -12,12 +13,9 @@ export class UnsplashPhotos {
     }
 
     async renderPageNumber (pageNumber) {
-        const url='https://api.unsplash.com/photos/?client_id='
-        const unsplash = { access: process.env.UNSPLASHACCESS }
-
         try {
-            const response = await fetch(`${url}${unsplash.access}&page=${pageNumber}&per_page=30`, {headers: {'X-Ratelimit-Limit': '1000'}})
-            const results = await response.json()
+            const url = getUnsplashUrl(pageNumber)
+            const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
             results.forEach((result) => this.renderResult(result))
         } catch (error) {
             console.error(error)

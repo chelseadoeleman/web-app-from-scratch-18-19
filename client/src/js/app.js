@@ -19,7 +19,7 @@ const geoCoder = new MapboxGeocoder({
 })
 mapBox.addControl(geoCoder)
 
-const images = new UnsplashPhotos()
+new UnsplashPhotos()
 
 
 
