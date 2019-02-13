@@ -1,46 +1,51 @@
 import { times } from '../helpers/helpers.js'
-import { Fetcher } from '../components/Fetcher.js'
+import { Fetcher } from './Fetcher.js'
 import { getUnsplashUrl } from '../helpers/getUnsplashUrl.js'
+
+
 export class UnsplashPhotos {
-    constructor () {
+    constructor (options) {
+        this.options = options
         this.render()
     }
 
-    render() {
+    async render() {
+        const { parent } = this.options
         const pageNumbers = times(10)
-
-        pageNumbers.forEach((pageNumber) => this.renderPageNumber(pageNumber))
+        const photos = document.createElement('div')
+        photos.classList.add('photos')
+        pageNumbers.forEach((pageNumber) => this.renderPageNumber(pageNumber, photos))
+        parent.appendChild(photos)
     }
 
-    async renderPageNumber (pageNumber) {
+    async renderPageNumber (pageNumber, parent) {
         try {
             const url = getUnsplashUrl(pageNumber)
             const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-            results.forEach((result) => this.renderResult(result))
+            results.forEach((result) => this.renderResult(result, parent))
         } catch (error) {
             console.error(error)
             throw new Error(error)
         }
     }
 
-    async renderResult (result) {
+    async renderResult (result, parent) {
         const data = {
             photo: result.urls.regular,
             location: result.user && result.user.location || undefined
         }
 
-        const url =  data.photo
-        const location = data.location
-        const showData = document.querySelector('.photos')
+        const { location, photo: url } = data
         let img = document.createElement('img')
 
         img.setAttribute('src', url)
         img.addEventListener('click', () =>  {
             location === undefined
-            ? alert('Location Unknown')
-            : geocoder.query(location)
+                ? alert('Location Unknown')
+                : geocoder.query(location)
         })
-        showData.append(img)
+
+        parent.appendChild(img)
     }
 }
 
