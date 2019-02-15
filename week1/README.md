@@ -2,7 +2,7 @@
 
 **During this project I had to create an web application, that gets the data from a API. The most important part is getting the data asynchronous**
 
-![Unsplash API](docs/app.png)
+![Unsplash API](../docs/app.png)
 
 
 ## Table of Contents
@@ -30,7 +30,7 @@ cd web-app-from-scratch-18-19
 ```
 
 Check if you have the latest version of npm.
-Install the dependencies in [package.json](./client/package.json)
+Install the dependencies in [package.json](../package.json)
 ```bash
 npm install
 ```
@@ -52,12 +52,12 @@ In the application you can scroll through a slider, to see different images that
 
 **NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
 
-![Interaction](docs/interaction.png)
+![Interaction](../docs/interaction.png)
 
-In [app.js](public/js/app.js) you can find all the logic. 
+In [app.js](../public/js/app.js) you can find all the logic. 
 Here is an abstract overview  of what happens in the application.
 
-![Actor](docs/actordiagram.png)
+![Actor](../docs/actordiagram.png)
 
 ## Learning process
 
@@ -82,7 +82,7 @@ Before this assignment I've worked once with an api. So although I knew what to 
 *   **Maikel:** For helping with mapbox.
 *   **Tim:** For helping with the header, to be able to send more requests.
 
-## Checklist
+## Checklist week 1
 - [x] Find an API of your interest
 - [x] Retrieve data from the API asynchronous. 
 - [x] Store data in an object (without parse, because data object are not defined as a string)

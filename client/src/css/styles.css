@@ -98,22 +98,36 @@ section {
     flex: 1 0;
 }
 
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 40vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
 .photos {
     margin: 2em;
     display: flex;
     overflow: auto;
     overflow-y: hidden;
-    align-items: center;
-    max-width: 40vw;
     max-height: 90vh;
+    max-width: 40vw;
 }
 
 img {
     scroll-behavior: smooth;
     object-fit: fill;
-    margin: 2em;
+    margin-bottom: 2em;
     justify-content: center;
     flex-direction: row;
-    width: 85%;
+    width: 60%;
     flex-shrink: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;  
 }

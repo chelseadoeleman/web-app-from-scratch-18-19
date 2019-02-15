@@ -13,10 +13,9 @@ export function Router() {
     try {
         router
           .on({
-            '/detail': handleDetailRoute(main, router),
+            '/detail/:id': handleDetailRoute(main, router),
             '*': handleIndexRoute(main, router)
-          })
-          .resolve()
+          }).resolve()
     } catch (error) {
         console.error(error)
         throw new Error(error)

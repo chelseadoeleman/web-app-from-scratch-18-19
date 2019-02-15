@@ -3,3 +3,4 @@ export const times = (amount) => {
     numbers.shift()
     return numbers
 }
+
