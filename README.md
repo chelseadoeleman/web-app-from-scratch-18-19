@@ -2,7 +2,7 @@
 
 **During this project I had to create an web application, that gets the data from a API. The most important part is getting the data asynchronous**
 
-![Unsplash API](../docs/app2.0.png)
+![Unsplash API](./docs/app2.0.png)
 
 
 ## Table of Contents
@@ -30,7 +30,7 @@ cd web-app-from-scratch-18-19
 ```
 
 Check if you have the latest version of npm.
-Install the dependencies in [package.json](../package.json)
+Install the dependencies in [package.json](./package.json)
 ```bash
 npm install
 ```
@@ -54,11 +54,11 @@ In the application you can scroll through a slider, to see different images that
 
 **NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
 
-![Interaction](../docs/interaction2.0.png)
+![Interaction](./docs/interaction2.0.png)
 
 Here is an abstract overview  of what happens in the application.
 
-![Actor](../docs/actor2.0.png)
+![Actor](./docs/actor2.0.png)
 
 ## Learning process
 
@@ -70,7 +70,7 @@ I started this week by looking at the issues that were opened on my github repos
 * views
 
 I did have some issues with Classes, because it was quite a new concept to me especially the constructor function I found pretty hard to grasp. Eventualy I completely refactored my code and removed all globals.
-Then I went to set up a Router. This I found the most difficult, because I knew what needed to happen but didn't know where to start. With a lot of help I set up a router and now I'm trying to render my [DetailView](../client/src/js/components/DetailView.js) page on hash. Because of this I wasn't able to dive into templates yet. which is something I still have to do for this week. 
+Then I went to set up a Router. This I found the most difficult, because I knew what needed to happen but didn't know where to start. With a lot of help I set up a router and now I'm trying to render my [DetailView](./client/src/js/components/DetailView.js) page on hash. Because of this I wasn't able to dive into templates yet. which is something I still have to do for this week. 
 
 I also improved my previous actor diagram and interaction diagram, altough I still struggle with those. Because I found it difficult to think of a whole file structure when I don't even know what's exactly going in there. 
 
