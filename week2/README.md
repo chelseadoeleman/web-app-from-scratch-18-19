@@ -2,7 +2,7 @@
 
 **During this project I had to create an web application, that gets the data from a API. The most important part is getting the data asynchronous**
 
-![Unsplash API](../docs/app.png)
+![Unsplash API](../docs/app2.0.png)
 
 
 ## Table of Contents
@@ -88,7 +88,7 @@ I also improved my previous actor diagram and interaction diagram, altough I sti
 
 ## Credits
 
-*   **Maikel:** For helping setting up the router
+*   **Maikel:** For helping with Classes and setting up the router.
 
 ## Checklist week 2
 - [x] Resolve issues from last week.
