@@ -2,7 +2,7 @@
 
 **During this project I had to create an web application, that gets the data from a API. The most important part is getting the data asynchronous**
 
-![Unsplash API](docs/app.png)
+![Unsplash API](../docs/app2.0.png)
 
 
 ## Table of Contents
@@ -30,7 +30,7 @@ cd web-app-from-scratch-18-19
 ```
 
 Check if you have the latest version of npm.
-Install the dependencies in [package.json](./client/package.json)
+Install the dependencies in [package.json](../package.json)
 ```bash
 npm install
 ```
@@ -45,6 +45,8 @@ The ```location``` was also very interesting, however not always defined. Becaus
 
 At first I only could get ten results per page. However in the documentation I found you can get a maximum of 30 results per page. So I also had to fetch more pages to get more data.
 
+For my detailpage I want to dive deeper into the characeristics of a photo. So the person who took the photo, but also things like height and width. 
+
 
 ## Walktrough the application
 
@@ -52,16 +54,25 @@ In the application you can scroll through a slider, to see different images that
 
 **NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
 
-![Interaction](docs/interaction.png)
+![Interaction](../docs/interaction2.0.png)
 
-In [app.js](public/js/app.js) you can find all the logic. 
 Here is an abstract overview  of what happens in the application.
 
-![Actor](docs/actordiagram.png)
+![Actor](../docs/actor2.0.png)
 
 ## Learning process
 
-Before this assignment I've worked once with an api. So although I knew what to do I always have trouble getting started. However when I retrieved the data everything ran smoothly. I had fun while making the image slider. And because I wanted to do more with the slider I decided to look at another API. This time Mapbox, because the Google maps API isn't available for free anymore ☹️. Getting started with Mapbox went quite smoothly and adding a search bar too. However I had trouble assigning the location to the searchbox. Together with Maikel I finally figured it out and now it's up and running! I do want to add pinmarks in the future, but before I can do this I have to get my location in longitude and latitude... 
+I started this week by looking at the issues that were opened on my github repository. Some I was able to resolve very quickly while others took up a lot more time. Like removing all globals from the global scope. Before I went and did this I dived deeper into Classes and begun with structuring all my files. Because of this I was able to get an better overview on how to divide my main file **app.js** into different files. I made four directory's: 
+
+* helpers
+* components
+* routes
+* views
+
+I did have some issues with Classes, because it was quite a new concept to me especially the constructor function I found pretty hard to grasp. Eventualy I completely refactored my code and removed all globals.
+Then I went to set up a Router. This I found the most difficult, because I knew what needed to happen but didn't know where to start. With a lot of help I set up a router and now I'm trying to render my [DetailView](../client/src/js/components/DetailView.js) page on hash. Because of this I wasn't able to dive into templates yet. which is something I still have to do for this week. 
+
+I also improved my previous actor diagram and interaction diagram, altough I still struggle with those. Because I found it difficult to think of a whole file structure when I don't even know what's exactly going in there. 
 
 
 ## Resources
@@ -71,30 +82,24 @@ Before this assignment I've worked once with an api. So although I knew what to 
 * [Mapbox](https://www.mapbox.com/)
 
 **Resources**
-* [Unsplash developers](https://unsplash.com/developers)
-* [Unsplash documentation](https://unsplash.com/documentation)
-* [Unsplash github](https://github.com/unsplash/unsplash-js)
-* [Unsplash mapbox query](https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query)
-* [Unsplash geocoder](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
+* [Parcel](https://parceljs.org/)
+* [Babel plyfill](https://babeljs.io/docs/en/babel-polyfill)
+* [Navigo](https://github.com/krasimir/navigo)
 
 ## Credits
 
-*   **Maikel:** For helping with mapbox.
-*   **Tim:** For helping with the header, to be able to send more requests.
+*   **Maikel:** For helping with Classes and setting up the router.
 
-## Checklist
-- [x] Find an API of your interest
-- [x] Retrieve data from the API asynchronous. 
-- [x] Store data in an object (without parse, because data object are not defined as a string)
-- [x] Show images in a slider
-- [x] Add a little bit of styling to the application
-- [x] Retrieve more pages/results from the API. 
-- [ ]   Add snappoints to the images
-- [x] Add another API (mapbox)
-- [x] Add location from image into mapbox
-- [ ]   Convert location to longitude and latitude
-- [ ]   Add pins to the location on the map
-- [ ]   Remove pop-up message when location is unknown with hover over image
+## Checklist week 2
+- [x] Resolve issues from last week.
+- [x] Remove all globals from the global scope. 
+- [x] Set up parcel to begin with exporting Classes.
+- [x] Set up a Router.
+- [x] Make an actor diagram.
+- [x] Make an interaction diagram.
+- [ ] Add Classes to the actor diagram. 
+- [ ] Render Detailview by removing the index render. 
+- [ ] Set up a template engine. 
 - [x] Write a readme.md
 
 ## License
