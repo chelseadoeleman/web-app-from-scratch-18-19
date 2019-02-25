@@ -11,3 +11,10 @@ export const getUnsplashDetail = (id) =>  {
     const unsplash = process.env.UNSPLASHACCESS
     return `${baseUrl}${unsplash}`
 }
+
+export const getUnsplashSearchUrl = (search) => {
+    const baseUrl = `https://api.unsplash.com/search/photos/?client_id=`
+    const unsplash = process.env.UNSPLASHACCESS
+    const searchQuery = `&query=${search}`
+    return `${baseUrl}${unsplash}${searchQuery}`
+}

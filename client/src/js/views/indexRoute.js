@@ -12,7 +12,6 @@ export function handleIndexRoute(parent, router) {
         mapRoot.id = 'map'
         mapRoot.style = 'min-width: 40vw; max-height: 90vh; margin-top: 2em; margin-right: 2em; position: relative;'
         Loader.toggleLoader()
-
         await new UnsplashPhotos({ parent: sectionElement, router }).render()
 
         sectionElement.appendChild(mapRoot)

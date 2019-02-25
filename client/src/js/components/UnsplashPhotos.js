@@ -1,8 +1,8 @@
 import { times } from '../helpers/helpers.js'
 import { Fetcher } from './Fetcher.js'
-import { getUnsplashUrl } from '../helpers/getUnsplashUrl.js'
-import { geoCoder } from '../helpers/mapboxGeo.js'
+import { getUnsplashUrl, getUnsplashSearchUrl } from '../helpers/getUnsplashUrl.js'
 import { Loader } from './Loader.js'
+import { renderResult } from './RenderImages'
 
 export class UnsplashPhotos {
     constructor (options) {
@@ -10,57 +10,56 @@ export class UnsplashPhotos {
     }
 
     async render() {
-        const { parent } = this.options
-        const pageNumbers = times(10)
+        const { parent, router } = this.options
         const photos = document.createElement('div')
         photos.classList.add('photos')
-        await Promise.all(pageNumbers.map((pageNumber) => this.renderPageNumber(pageNumber, photos)))
+
+        await this.renderDefaultPages(photos)
+
+        const searchBox = document.createElement('input')
+        searchBox.setAttribute('type', 'text')
+        searchBox.classList.add('searchBox')
+        searchBox.addEventListener('keyup', async (event) => {
+            if (event.key !== 'Enter') {
+                return
+            }
+
+            photos.innerHTML = ''
+            
+            const value = event.target.value
+
+            if (!value || !value.length) {
+                await this.renderDefaultPages(photos)
+                return
+            }
+
+            const url = getUnsplashSearchUrl(value)
+            const { results } = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
+            results.forEach((result) => renderResult(result, photos, router))
+        })
+
+        parent.appendChild(searchBox)
         parent.appendChild(photos)
         Loader.toggleLoader()
     }
 
+    async renderDefaultPages(parent) {
+        const pageNumbers = times(10)
+        await Promise.all(pageNumbers.map((pageNumber) => this.renderPageNumber(pageNumber, parent)))
+    }
+
     async renderPageNumber (pageNumber, parent) {
         try {
+            const { router } = this.options
             const url = getUnsplashUrl(pageNumber)
             const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-            results.forEach((result) => this.renderResult(result, parent))
+            results.forEach((result) => renderResult(result, parent, router))
         } catch (error) {
             console.error(error)
             throw new Error(error)
         }
     }
 
-    renderResult (result, parent) {
-        const { router } = this.options
-        const data = {
-            photo: result.urls.regular,
-            location: result.user && result.user.location || undefined,
-            id: result.id,
-        }
-
-        const { location, photo: url, id } = data
-        let wrapper = document.createElement('div')
-        let img = document.createElement('img')
-        let link = document.createElement('a')
-
-        wrapper.classList.add('image-wrapper')
-
-        img.setAttribute('src', url)
-        img.addEventListener('click', () =>  {
-            location === undefined
-                ? alert('Location Unknown')
-                : geoCoder.query(location)
-        })
-
-        link.addEventListener('click', () => {
-            router.navigate(`/detail/${id}`)
-        })
-        link.innerText = 'More about this picture'
-
-        wrapper.appendChild(img)
-        wrapper.appendChild(link)
-        parent.appendChild(wrapper)
-    }
 }
 
 
