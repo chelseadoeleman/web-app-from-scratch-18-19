@@ -36,9 +36,39 @@ export class DetailView {
             name: result.user.name || undefined,
             user_photo: result.user && result.user["profile_image"] && result.user["profile_image"].large || undefined
         }
-        console.log(data)
 
-        list.appendChild(createListElements)
+        const { url, width, height, likes, name, user_photo } = data
+
+        const list = document.createElement('ul')
+        const listItem = document.createElement('li')
+        const listWidth = document.createElement('li')
+        const listHeight = document.createElement('li')
+        const listLikes = document.createElement('li')
+        const listName = document.createElement('li')
+        const imgUrl = document.createElement('img')
+        const imgUser = document.createElement('img')
+
+        listWidth.innerText = width
+        listHeight.innerText = height
+        listLikes.innerText = likes
+        listName.innerText = name
+
+        imgUrl.classList.add('head-image')
+        imgUser.classList.add('user')
+
+        imgUrl.setAttribute('src', url)
+        imgUser.setAttribute('src', user_photo)
+        
+        
+
+        listItem.appendChild(imgUser)
+        list.appendChild(listItem)
+        list.appendChild(listWidth)
+        list.appendChild(listHeight)
+        list.appendChild(listLikes)
+        list.appendChild(listName)
+        listItem.appendChild(imgUrl)
+    
         parent.appendChild(list)
     }
 }

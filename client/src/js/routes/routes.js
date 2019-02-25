@@ -1,6 +1,6 @@
 import Navigo from 'navigo'
-import { handleIndexRoute } from '../views/indexRoute';
-import { handleDetailRoute } from '../views/detailRoute';
+import { handleIndexRoute } from '../views/indexRoute'
+import { handleDetailRoute } from '../views/detailRoute'
 
 const root = null
 const useHash = true

@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
     font-family: "didot";
-    src: url("../fonts/Didot.ttc") format("opentype")
-} */
+    src: url("./fonts/Didot.ttc") format("opentype")
+}
 
 * {
     margin: 0;
@@ -16,19 +16,8 @@
     box-sizing: inherit;
 }
 
- /*
- * Give element block that are not block by default.
- * This makes sure the parent div is the exact size of the element.
- */
-label,
-img,
-audio,
-video,
-canvas,
-meter,
-progress,
-svg,
-iframe {
+
+img {
     display: block;
 }
 
@@ -37,24 +26,9 @@ button {
     cursor: pointer;
 }
 
- table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
  ol, ul {
     padding: 0;
     list-style: none;
-}
-
- blockquote, q {
-	quotes: none;
-}
-
- blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
 }
 
 ::-webkit-scrollbar { 
@@ -101,28 +75,29 @@ section {
 .image-wrapper {
     display: flex;
     flex-direction: column;
-    min-width: 40vw;
+    min-width: 35vw;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
 .photos {
-    margin: 2em;
     display: flex;
     overflow: auto;
     overflow-y: hidden;
-    max-height: 90vh;
+    max-height: 95vh;
     max-width: 40vw;
+    margin: 0 2em;
 }
 
 img {
     scroll-behavior: smooth;
     object-fit: fill;
+    margin: 0 -2em;
     margin-bottom: 2em;
     justify-content: center;
     flex-direction: row;
-    width: 60%;
+    width: 80%;
     flex-shrink: 0;
     z-index: 2;
     cursor: pointer;
@@ -131,3 +106,102 @@ img {
 a {
     cursor: pointer;  
 }
+
+ul {
+    margin: 5em;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    display: flex;
+}
+
+ul li .head-image {
+    display: flex;
+}
+
+ul li .user {
+    max-width: 100px;
+    max-height: 100px;
+    display: flex;
+}
+
+/* https://projects.lukehaas.me/css-loaders/ */
+
+.loader {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    color: rgb(152, 196, 255);
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  @-webkit-keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  
+  

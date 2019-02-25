@@ -2,11 +2,11 @@ import { times } from '../helpers/helpers.js'
 import { Fetcher } from './Fetcher.js'
 import { getUnsplashUrl } from '../helpers/getUnsplashUrl.js'
 import { geoCoder } from '../helpers/mapboxGeo.js'
+import { Loader } from './Loader.js'
 
 export class UnsplashPhotos {
     constructor (options) {
         this.options = options
-        this.render()
     }
 
     async render() {
@@ -14,8 +14,9 @@ export class UnsplashPhotos {
         const pageNumbers = times(10)
         const photos = document.createElement('div')
         photos.classList.add('photos')
-        pageNumbers.forEach((pageNumber) => this.renderPageNumber(pageNumber, photos))
+        await Promise.all(pageNumbers.map((pageNumber) => this.renderPageNumber(pageNumber, photos)))
         parent.appendChild(photos)
+        Loader.toggleLoader()
     }
 
     async renderPageNumber (pageNumber, parent) {
@@ -29,7 +30,7 @@ export class UnsplashPhotos {
         }
     }
 
-    async renderResult (result, parent) {
+    renderResult (result, parent) {
         const { router } = this.options
         const data = {
             photo: result.urls.regular,
@@ -47,7 +48,6 @@ export class UnsplashPhotos {
         img.setAttribute('src', url)
         img.addEventListener('click', () =>  {
             location === undefined
-                console.log(location)
                 ? alert('Location Unknown')
                 : geoCoder.query(location)
         })
