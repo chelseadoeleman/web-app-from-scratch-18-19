@@ -107,27 +107,41 @@ a {
     cursor: pointer;  
 }
 
-ul {
+section ul {
+  position: relative;
     margin: 5em;
-    max-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 ul li {
-    display: flex;
+    margin: 1em auto;
+    font-size: 2em;
+    z-index: 4;
+    color: blue;
 }
 
-ul li .head-image {
-    display: flex;
+div {
+  display: flex;
 }
 
-ul li .user {
-    max-width: 100px;
-    max-height: 100px;
+div .head-image {
+    margin: 2em 0;
+    max-width: 80%;
+    height: 80%;
+}
+
+div .user {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    max-width: 125px;
+    max-height: 125px;
     display: flex;
+    z-index: 3;
 }
 
 /* https://projects.lukehaas.me/css-loaders/ */
@@ -137,7 +151,7 @@ ul li .user {
     z-index: 999;
     top: 50%;
     left: 50%;
-    color: rgb(152, 196, 255);
+    color: rgb(166, 190, 221);
     font-size: 20px;
     width: 1em;
     height: 1em;

@@ -14,7 +14,6 @@ export class Loader {
         const parent = document.querySelector('main')
         const loader = parent.querySelector('.loader')
         if (loader) {
-            console.log(loader)
             parent.removeChild(loader)
         } else {
             new Loader()

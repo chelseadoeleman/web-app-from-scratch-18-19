@@ -3,9 +3,8 @@ import { setupMapBox } from '../helpers/mapboxGeo'
 import { Loader }  from '../components/Loader'
 
 export function handleIndexRoute(parent, router) {
-    parent.innerHTML = ''
-
     return async function() {
+        parent.innerHTML = ''
         const sectionElement = document.createElement('section')
         const headingElement = document.createElement('h1')
         headingElement.innerText = 'Web App From Scratch'

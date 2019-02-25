@@ -1,5 +1,6 @@
 import { Fetcher } from './Fetcher.js'
 import { getUnsplashDetail } from '../helpers/getUnsplashUrl'
+import { Loader } from './Loader.js'
 
 
 export class DetailView {
@@ -21,6 +22,7 @@ export class DetailView {
             const url = getUnsplashDetail(id)
             const result = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
             this.renderResult(result, parent)
+            Loader.toggleLoader()
         } catch (error) {
             console.error(error)
             throw new Error(error)
@@ -39,14 +41,8 @@ export class DetailView {
 
         const { url, width, height, likes, name, user_photo } = data
 
-        const list = document.createElement('ul')
-        const listItem = document.createElement('li')
-        const listWidth = document.createElement('li')
-        const listHeight = document.createElement('li')
-        const listLikes = document.createElement('li')
-        const listName = document.createElement('li')
-        const imgUrl = document.createElement('img')
-        const imgUser = document.createElement('img')
+        const elements = ['ul', 'div', 'li', 'li', 'li', 'li', 'img', 'img']
+        const [list, imgWrapper, listWidth, listHeight, listLikes, listName, imgUrl, imgUser] = elements.map(el => document.createElement(el))
 
         listWidth.innerText = width
         listHeight.innerText = height
@@ -61,13 +57,13 @@ export class DetailView {
         
         
 
-        listItem.appendChild(imgUser)
-        list.appendChild(listItem)
+        imgWrapper.appendChild(imgUser)
+        imgWrapper.appendChild(imgUrl)
+        list.appendChild(imgWrapper)
         list.appendChild(listWidth)
         list.appendChild(listHeight)
         list.appendChild(listLikes)
         list.appendChild(listName)
-        listItem.appendChild(imgUrl)
     
         parent.appendChild(list)
     }
