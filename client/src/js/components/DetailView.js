@@ -1,7 +1,7 @@
 import { Fetcher } from './Fetcher.js'
 import { getUnsplashDetail } from '../helpers/getUnsplashUrl'
 import { Loader } from './Loader.js'
-import { renderDetails } from './RenderDetails.js';
+import { RenderDetails } from './RenderDetails.js';
 
 
 export class DetailView {
@@ -22,7 +22,7 @@ export class DetailView {
         try {
             const url = getUnsplashDetail(id)
             const result = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-            renderDetails(result, parent)
+            new RenderDetails({result, parent})
             Loader.toggleLoader()
         } catch (error) {
             console.error(error)

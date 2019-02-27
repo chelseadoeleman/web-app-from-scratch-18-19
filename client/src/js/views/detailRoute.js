@@ -4,7 +4,6 @@ import { Loader } from '../components/Loader'
 export function handleDetailRoute(parent, router) {
     return function({ id }) {
         parent.innerHTML = ''
-        console.log(id)
         const sectionElement = document.createElement('section')
         const headingElement = document.createElement('h1')
         headingElement.innerText = 'Web App From Scratch'
