@@ -5,7 +5,7 @@ import { Loader } from './Loader.js'
 import { Search } from './Search.js'
 import { renderResult } from './RenderImages'
 
-export class UnsplashPhotos {
+export class MasterView {
     constructor (options) {
         this.options = options
     }

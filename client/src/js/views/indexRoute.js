@@ -1,4 +1,4 @@
-import { UnsplashPhotos } from '../components/UnsplashPhotos'
+import { MasterView} from '../components/MasterView'
 import { setupMapBox } from '../helpers/mapboxGeo'
 import { Loader }  from '../components/Loader'
 
@@ -12,7 +12,7 @@ export function handleIndexRoute(parent, router) {
         mapRoot.id = 'map'
         mapRoot.style = 'min-width: 40vw; max-height: 90vh; margin-top: 2em; margin-right: 2em; position: relative;'
         Loader.toggleLoader()
-        await new UnsplashPhotos({ parent: sectionElement, router }).render()
+        await new MasterView({ parent: sectionElement, router }).render()
 
         sectionElement.appendChild(mapRoot)
         parent.appendChild(headingElement)
