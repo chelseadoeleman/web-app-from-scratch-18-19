@@ -1,6 +1,7 @@
 import Navigo from 'navigo'
 import { handleIndexRoute } from '../views/indexRoute'
 import { handleDetailRoute } from '../views/detailRoute'
+import { handleErrorRoute } from '../views/errorPage'
 
 const root = null
 const useHash = true
@@ -12,10 +13,15 @@ export function Router() {
 
     try {
         router
-          .on({
-            '/detail/:id': handleDetailRoute(main, router),
-            '*': handleIndexRoute(main, router)
-          }).resolve()
+            .on({
+              '/detail/:id': handleDetailRoute(main, router),
+              '/error': handleErrorRoute(main, router),
+              '/': handleIndexRoute(main, router)
+            })
+            .notFound(() => {
+                console.error('Error...')
+                router.navigate('/error')
+            }).resolve()
     } catch (error) {
         console.error(error)
         throw new Error(error)
