@@ -7,7 +7,6 @@ export function renderResult (result, parent, router) {
         location: result.user && result.user.location || undefined,
         id: result.id,
     }
-    localStorage.setItem('data', JSON.stringify(data));
 
     const { location, photo: url, id } = data
     let wrapper = document.createElement('div')
