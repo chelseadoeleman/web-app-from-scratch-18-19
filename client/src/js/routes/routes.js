@@ -1,7 +1,7 @@
 import Navigo from 'navigo'
 import { handleIndexRoute } from '../views/indexRoute'
 import { handleDetailRoute } from '../views/detailRoute'
-import { handleErrorRoute } from '../views/errorPage'
+import { handleErrorRoute } from '../views/errorRoute'
 
 const root = null
 const useHash = true
