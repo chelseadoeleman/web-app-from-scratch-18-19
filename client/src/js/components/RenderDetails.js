@@ -5,29 +5,9 @@ export class RenderDetails {
     }
 
     render() {
-        const data = this.getData()
+        const { data } = this.options
 
-        this.setDataToLocalStorage()
         this.renderDetails(data)
-    }
-
-    getData() {
-        const { result } = this.options
-
-        return {
-            url: result.urls.regular,
-            width: result.width || undefined,
-            height: result.height || undefined,
-            likes: result.likes || undefined,
-            name: result.user.name || undefined,
-            user_photo: result.user && result.user["profile_image"] && result.user["profile_image"].large || undefined
-        }
-    }
-
-    setDataToLocalStorage() {
-        const data = this.getData()
-
-        localStorage.setItem('data', JSON.stringify(data))
     }
 
     renderDetails(data) {
