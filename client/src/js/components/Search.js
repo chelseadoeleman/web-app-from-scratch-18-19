@@ -1,37 +1,43 @@
 import { renderResult } from './RenderImages'
 import { getUnsplashSearchUrl } from '../helpers/getUnsplashUrl.js'
+import { Fetcher } from './Fetcher.js'
 
 export class Search {
-
-    constructor() {
+    constructor(options) {
+        this.options = options
         this.render()
     }
 
     render() {
-        const parent = document.querySelector('section')
+        const { parent,  } = this.options
+
         const searchBox = document.createElement('input')
         searchBox.setAttribute('type', 'text')
         searchBox.classList.add('searchBox')
+
+        searchBox.addEventListener('keyup', (event) => this.handleSearch(event))
+
         parent.appendChild(searchBox)
-        
     }
 
-    static searchQuery() {
-        await this.renderDefaultPages(photos)
+    async handleSearch(event) {
+        const { renderPage, photos, router } = this.options
+        
+        if (event.key !== 'Enter') {
+            return
+        }
 
-        searchBox.addEventListener('keyup', async (event) => {
-            if (event.key !== 'Enter') {
-                return
-            }
+        photos.innerHTML = ''
 
-            photos.innerHTML = ''
-            
-            const value = event.target.value
+        const value = event.target.value
 
-            if (!value || !value.length) {
-                await this.renderDefaultPages(photos)
-                return
-            }
-        })
+        if (!value || !value.length) {
+            await renderPage(photos)
+            return
+        }
+
+        const url = getUnsplashSearchUrl(value)
+        const { results } = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
+        results.forEach((result) => renderResult(result, photos, router))
     }
 }
