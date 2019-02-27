@@ -1,5 +1,5 @@
 require("dotenv").config()
-import { MapBox } from "../components/MapBox.js"
+import { MapBox } from "../components/MapBox"
 
 export const geoCoder = new MapboxGeocoder({ 
     accessToken: process.env.MAPBOXKEY 

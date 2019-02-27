@@ -1,7 +1,7 @@
-import { Fetcher } from './Fetcher.js'
+import { Fetcher } from './Fetcher'
 import { getUnsplashDetail } from '../helpers/getUnsplashUrl'
-import { Loader } from './Loader.js'
-import { RenderDetails } from './RenderDetails.js';
+import { Loader } from './Loader'
+import { RenderDetails } from './RenderDetails';
 
 
 export class DetailView {

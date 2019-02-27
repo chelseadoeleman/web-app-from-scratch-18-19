@@ -1,6 +1,6 @@
 import { renderResult } from './RenderImages'
-import { getUnsplashSearchUrl } from '../helpers/getUnsplashUrl.js'
-import { Fetcher } from './Fetcher.js'
+import { getUnsplashSearchUrl } from '../helpers/getUnsplashUrl'
+import { Fetcher } from './Fetcher'
 
 export class Search {
     constructor(options) {

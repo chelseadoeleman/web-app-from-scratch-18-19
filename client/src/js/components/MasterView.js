@@ -1,9 +1,9 @@
-import { times } from '../helpers/helpers.js'
-import { Fetcher } from './Fetcher.js'
-import { getUnsplashUrl} from '../helpers/getUnsplashUrl.js'
-import { Loader } from './Loader.js'
-import { Search } from './Search.js'
-import { renderResult } from './RenderImages'
+import { times } from '../helpers/helpers'
+import { Fetcher } from './Fetcher'
+import { getUnsplashUrl} from '../helpers/getUnsplashUrl'
+import { Loader } from './Loader'
+import { Search } from './Search'
+import { renderResult, RenderMaster } from './RenderImages'
 
 export class MasterView {
     constructor (options) {
@@ -33,7 +33,7 @@ export class MasterView {
             const { router } = this.options
             const url = getUnsplashUrl(pageNumber)
             const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-            results.forEach((result) => renderResult(result, parent, router))
+            results.forEach((result) => new RenderMaster({result, parent, router}))
         } catch (error) {
             console.error(error)
             throw new Error(error)
