@@ -1,4 +1,4 @@
-import { renderResult } from './RenderImages'
+import { RenderMaster} from './RenderImages'
 import { getUnsplashSearchUrl } from '../helpers/getUnsplashUrl'
 import { Fetcher } from './Fetcher'
 
@@ -9,7 +9,7 @@ export class Search {
     }
 
     render() {
-        const { parent,  } = this.options
+        const { parent } = this.options
 
         const searchBox = document.createElement('input')
         searchBox.setAttribute('type', 'text')
@@ -38,6 +38,6 @@ export class Search {
 
         const url = getUnsplashSearchUrl(value)
         const { results } = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-        results.forEach((result) => renderResult(result, photos, router))
+        results.forEach((result) => RenderMaster(result, photos, router))
     }
 }

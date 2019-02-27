@@ -17,7 +17,7 @@ export class MasterView {
 
         await this.renderDefaultPages(photos)
 
-        new Search({ parent, renderPage : this.renderDefaultPages.bind(this), photos, router })
+        new Search({ parent, renderPage: () => this.renderDefaultPages(parent), photos, router })
 
         parent.appendChild(photos)
         Loader.toggleLoader()
@@ -25,7 +25,7 @@ export class MasterView {
     
     async renderDefaultPages(parent) {
         const pageNumbers = times(10)
-        await Promise.all(pageNumbers.map((pageNumber) => this.renderPageNumber(pageNumber, parent)))
+        await Promise.all(pageNumbers.map(pageNumber => this.renderPageNumber(pageNumber, parent)))
     }
 
     async renderPageNumber (pageNumber, parent) {
@@ -34,7 +34,7 @@ export class MasterView {
             const url = getUnsplashUrl(pageNumber)
             const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
             
-            results.forEach((result) => new RenderMaster({result, parent, router}))
+            results.forEach((result) => RenderMaster(result, parent, router))
         } catch (error) {
             console.error(error)
             throw new Error(error)
