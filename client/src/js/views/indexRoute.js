@@ -2,8 +2,8 @@ import { MasterView} from '../components/MasterView'
 import { setupMapBox } from '../helpers/mapboxGeo'
 import { Loader }  from '../components/Loader'
 
-export function handleIndexRoute(parent, router) {
-    return async function() {
+export const handleIndexRoute = (parent, router) => {
+    return async () => {
         parent.innerHTML = ''
 
         const sectionElement = document.createElement('section')

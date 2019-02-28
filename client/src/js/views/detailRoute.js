@@ -1,8 +1,8 @@
 import { DetailView } from '../components/DetailView' 
 import { Loader } from '../components/Loader'
 
-export function handleDetailRoute(parent, router) {
-    return function({ id }) {
+export const handleDetailRoute = (parent, router) => {
+    return ({ id }) => {
         parent.innerHTML = ''
 
         const sectionElement = document.createElement('section')

@@ -8,7 +8,7 @@ const useHash = true
 const hash = '#'
 const router = new Navigo(root, useHash, hash)
 
-export function Router() {
+export const Router = () => {
     const main = document.querySelector('main')
 
     try {

@@ -5,7 +5,7 @@ export const geoCoder = new MapboxGeocoder({
     accessToken: process.env.MAPBOXKEY 
 })
 
-export function setupMapBox() {
+export const setupMapBox = () => {
     const mapBox = new MapBox ({
         accessToken: process.env.MAPBOXKEY,
         container: 'map',

@@ -1,7 +1,7 @@
 import { Loader } from '../components/Loader'
 
-export function handleErrorRoute(parent, router) {
-    return async function() {
+export const handleErrorRoute = (parent, router) => {
+    return async () => {
         parent.innerHTML = ''
 
         const sectionElement = document.createElement('section')

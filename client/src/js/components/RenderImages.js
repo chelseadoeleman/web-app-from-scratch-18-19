@@ -1,7 +1,7 @@
 
 import { geoCoder } from '../helpers/mapboxGeo'
 
-export function RenderImages (result, parent, router) {
+export const RenderImages = (result, parent, router) => {
     const data = {
         photo: result.urls.regular,
         location: result.user && result.user.location || undefined,

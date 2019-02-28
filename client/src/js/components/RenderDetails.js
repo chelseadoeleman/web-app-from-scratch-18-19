@@ -28,7 +28,9 @@ export class RenderDetails {
         listName.innerText = 'Username: ' + name
         listWidth.innerText = 'Width: ' + width
         listHeight.innerText = 'Height: ' + height
-        listLikes.innerText = 'Likes: ' + likes
+        likes === undefined 
+            ? listLikes.innerText = 'Likes: ' + 0
+            : listLikes.innerText = 'Likes: ' + likes
 
         imgUrl.classList.add('head-image')
         imgUser.classList.add('user')
