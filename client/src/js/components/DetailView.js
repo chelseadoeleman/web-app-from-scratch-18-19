@@ -2,7 +2,7 @@ import { Fetcher } from './Fetcher'
 import { getUnsplashDetail } from '../helpers/getUnsplashUrl'
 import { Loader } from './Loader'
 import { RenderDetails } from './RenderDetails'
-import { LocalStorageService } from '../helpers/localStorageService'
+import { LocalStorageService } from '../helpers/llocalStorageService'
 
 export class DetailView {
     constructor (options) {
