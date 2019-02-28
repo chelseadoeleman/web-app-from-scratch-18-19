@@ -1,6 +1,6 @@
 # Web App From Scratch @cmda-minor-web 18-19
 
-**During this project I had to create an web application, that gets the data from a API. The most important part is getting the data asynchronous**
+**During this project I had to create an web application from scratch, that gets the data from an API. In this case the Unsplash API. The challenge: not using any external javascript libraries**
 
 ![Unsplash API](./docs/app2.0.png)
 
@@ -17,9 +17,10 @@
 
 ## How to install
 
-Before installing make sure you have installed the latest version of node.js
+Before installing make sure you have installed the latest version of node.js.
 Choose or make a new directory.
 Load the template into your directory.
+
 ```bash
 git clone https://github.com/chelseadoeleman/web-app-from-scratch-18-19.git
 ```
@@ -35,17 +36,19 @@ Install the dependencies in [package.json](./package.json)
 npm install
 ```
 
-There isn't a server build behind it yet, but feel free to do so. 
-
-## Unsplash API 🐒
+## Unsplash API
 
 The unsplash API is pretty straight forward and the results are in JSON. I really liked the image url object ```regular```, in the API, where you can choose between five different image resolutions. I also found the most prominent ```color``` code in hexadecimals quite interesting. However I coudn't come up with a concept thus far to including this data object. 
 
 The ```location``` was also very interesting, however not always defined. Because the location was available I decided to add the mapbox API to the application. 
 
-At first I only could get ten results per page. However in the documentation I found you can get a maximum of 30 results per page. So I also had to fetch more pages to get more data.
+At first I only could get ten results per page. However in the documentation I found you can get a maximum of 30 results per page. So I also had to fetch more pages to get more data. Without adding an header to the fetcher, you aren't able to do more than 50 request per hour. After adding the header I was able to send more requests.
 
-For my detailpage I want to dive deeper into the characeristics of a photo. So the person who took the photo, but also things like height and width. 
+```js
+new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
+```
+
+For my detailpage I dove deeper into the characeristics of a photo. So the person who took the photo, but also things like height and width. 
 
 
 ## Walktrough the application
@@ -54,7 +57,25 @@ In the application you can scroll through a slider, to see different images that
 
 **NOTE** Right now there is an alert that tells you when the location is unknown, this has yet to be changed because it can be quite irritating. Sorry!
 
+### Interaction diagram
+
+<details>
+  <summary> Version 1</summary>
+  ![Interaction](./docs/interaction2.0.png)
+</details>
+<details>
+  <summary> Version 2</summary>
+  ![Interaction](./docs/interaction2.0.png)
+</details>
+<details>
+  <summary> Version 3</summary>
+  ![Interaction](./docs/interaction2.0.png)
+</details>
+
 ![Interaction](./docs/interaction2.0.png)
+
+
+### Actor diagram
 
 Here is an abstract overview  of what happens in the application.
 
@@ -83,7 +104,7 @@ I also improved my previous actor diagram and interaction diagram, altough I sti
 
 **Resources**
 * [Parcel](https://parceljs.org/)
-* [Babel plyfill](https://babeljs.io/docs/en/babel-polyfill)
+* [Babel polyfill](https://babeljs.io/docs/en/babel-polyfill)
 * [Navigo](https://github.com/krasimir/navigo)
 
 ## Credits
