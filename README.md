@@ -71,13 +71,12 @@ In the application you can scroll through a slider, to see different images that
   ![Interaction](./docs/interaction2.0.png)
 </details>
 
-<details>
+<details open>
   <summary> Version 3</summary>
 
   ![Interaction](./docs/interaction3.0.png)
 </details>
 
-![Interaction](./docs/interaction2.0.png)
 
 
 ### Actor diagram
