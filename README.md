@@ -61,14 +61,19 @@ In the application you can scroll through a slider, to see different images that
 
 <details>
   <summary> Version 1</summary>
+
   ![Interaction](./docs/interaction2.0.png)
 </details>
+
 <details>
   <summary> Version 2</summary>
+
   ![Interaction](./docs/interaction2.0.png)
 </details>
+
 <details>
   <summary> Version 3</summary>
+
   ![Interaction](./docs/interaction2.0.png)
 </details>
 
