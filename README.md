@@ -62,7 +62,7 @@ In the application you can scroll through a slider, to see different images that
 <details>
   <summary> Version 1</summary>
 
-  ![Interaction](./docs/interaction2.0.png)
+  ![Interaction](./docs/interaction.png)
 </details>
 
 <details>
@@ -74,7 +74,7 @@ In the application you can scroll through a slider, to see different images that
 <details>
   <summary> Version 3</summary>
 
-  ![Interaction](./docs/interaction2.0.png)
+  ![Interaction](./docs/interaction3.0.png)
 </details>
 
 ![Interaction](./docs/interaction2.0.png)
