@@ -2,7 +2,7 @@
 
 import 'babel-polyfill'
 import { Router } from '../js/routes/routes'
-import { LocalStorageService } from './helpers/LocalStorageService'
+import { LocalStorageService } from './helpers/localStorageService'
 
 (() => {
     const localStorageService = new LocalStorageService()
