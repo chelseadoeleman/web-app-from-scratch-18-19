@@ -28,7 +28,7 @@ export class MasterView {
         await Promise.all(pageNumbers.map(pageNumber => this.renderPageNumber(pageNumber, parent)))
     }
 
-    async renderPageNumber (pageNumber, parent) {
+    async renderPageNumber(pageNumber, parent) {
         try {
             const { router } = this.options
             const url = getUnsplashUrl(pageNumber)
