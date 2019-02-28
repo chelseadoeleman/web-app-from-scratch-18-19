@@ -92,6 +92,14 @@ Here is an abstract overview  of what happens in the application.
 ## Learning process
 
 <details>
+  <summary> Week 1</summary>
+
+  #### Week 1
+
+  Before this assignment I've worked once with an api. So although I knew what to do I always have trouble getting started. However when I retrieved the data everything ran smoothly. I had fun while making the image slider. And because I wanted to do more with the slider I decided to look at another API. This time Mapbox, because the Google maps API isn't available for free anymore ☹️. Getting started with Mapbox went quite smoothly and adding a search bar too. However I had trouble assigning the location to the searchbox. Together with Maikel I finally figured it out and now it's up and running! I do want to add pinmarks in the future, but before I can do this I have to get my location in longitude and latitude...
+</details>
+
+<details>
   <summary> Week 2</summary>
 
   #### Week 2
@@ -125,14 +133,18 @@ I also improved my previous actor diagram and interaction diagram, altough I sti
 
 **API**
 * [Unsplash](https://unsplash.com/developers)
+* [Unsplash documentation](https://unsplash.com/documentation)
+* [Unsplash github](https://github.com/unsplash/unsplash-js)
 * [Mapbox](https://www.mapbox.com/)
+* [Mapbox query](https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md#query)
+* [Geocoder](https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/)
 
 **Resources**
 * [Parcel](https://parceljs.org/)
 * [Babel polyfill](https://babeljs.io/docs/en/babel-polyfill)
 * [Navigo](https://github.com/krasimir/navigo)
 * [Classes](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Klasses)
-* [Times function](https://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n)
+* [Times function to start counting from 1 in an array](https://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n)
 
 ## Credits
 
