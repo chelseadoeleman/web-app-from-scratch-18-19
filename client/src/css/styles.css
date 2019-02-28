@@ -67,6 +67,37 @@ h1 {
     margin-right: -1em;
 }
 
+.error-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin: 0 1em;
+    margin-bottom: 0.2em;
+    font-size: 10em;
+}
+
+.error-wrapper p {
+    max-width: 45%;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 2em; 
+    background-color: #2b2b2b;
+    font-size: 2em;
+    color: white;
+}
+
 section {
     display: flex;
     flex: 1 0;
@@ -118,7 +149,7 @@ a {
 
 section ul {
     position: relative;
-    margin: 5em;
+    margin: 5em auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,10 +158,10 @@ section ul {
 }
 
 ul li {
-    margin: 1em auto;
-    font-size: 2em;
+    margin: .3em auto;
+    font-size: 1.5em;
     z-index: 4;
-    color: blue;
+    color: #2b2b2b;
 }
 
 .detail-image-wrapper {
@@ -153,6 +184,16 @@ ul li {
     margin-right: 2em;
     max-width: 125px;
     max-height: 125px;
+}
+
+.no-images {
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    z-index: 5;
+    color: rgb(166, 190, 221);
+    font-size: 2em;
+    font-weight: bold;
 }
 
 /* https://projects.lukehaas.me/css-loaders/ */

@@ -25,10 +25,10 @@ export class RenderDetails {
         ]
         const [list, imgWrapper, imgUrl, imgUser, listWidth, listHeight, listLikes, listName] = elements.map(el => document.createElement(el))
 
-        listWidth.innerText = width
-        listHeight.innerText = height
-        listLikes.innerText = likes
-        listName.innerText = name
+        listName.innerText = 'Username: ' + name
+        listWidth.innerText = 'Width: ' + width
+        listHeight.innerText = 'Height: ' + height
+        listLikes.innerText = 'Likes: ' + likes
 
         imgUrl.classList.add('head-image')
         imgUser.classList.add('user')
@@ -40,10 +40,10 @@ export class RenderDetails {
         imgWrapper.appendChild(imgUser)
         imgWrapper.appendChild(imgUrl)
         list.appendChild(imgWrapper)
+        list.appendChild(listName)
         list.appendChild(listWidth)
         list.appendChild(listHeight)
         list.appendChild(listLikes)
-        list.appendChild(listName)
 
         parent.appendChild(list)
     }

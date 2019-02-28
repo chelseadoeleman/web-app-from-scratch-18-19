@@ -3,7 +3,7 @@ import { Fetcher } from './Fetcher'
 import { getUnsplashUrl} from '../helpers/getUnsplashUrl'
 import { Loader } from './Loader'
 import { Search } from './Search'
-import { RenderMaster } from './RenderImages'
+import { RenderImages } from './RenderImages'
 
 export class MasterView {
     constructor (options) {
@@ -17,7 +17,7 @@ export class MasterView {
 
         await this.renderDefaultPages(photos)
 
-        new Search({ parent, renderPage: () => this.renderDefaultPages(parent), photos, router })
+        new Search({ parent, renderPage: () => this.renderDefaultPages(photos), photos, router })
 
         parent.appendChild(photos)
         Loader.toggleLoader()
@@ -34,7 +34,7 @@ export class MasterView {
             const url = getUnsplashUrl(pageNumber)
             const results = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
             
-            results.forEach((result) => RenderMaster(result, parent, router))
+            results.forEach((result) => RenderImages(result, parent, router))
         } catch (error) {
             console.error(error)
             throw new Error(error)

@@ -1,7 +1,7 @@
 
 import { geoCoder } from '../helpers/mapboxGeo'
 
-export function RenderMaster (result, parent, router) {
+export function RenderImages (result, parent, router) {
     const data = {
         photo: result.urls.regular,
         location: result.user && result.user.location || undefined,
@@ -16,20 +16,20 @@ export function RenderMaster (result, parent, router) {
     wrapper.classList.add('image-wrapper')
 
     img.setAttribute('src', url)
-        img.addEventListener('click', () =>  {
-            location === undefined
-                ? alert('Location Unknown')
-                : geoCoder.query(location)
-        })
+    img.addEventListener('click', () =>  {
+        location === undefined
+            ? alert('Location Unknown')
+            : geoCoder.query(location)
+    })
 
-        link.addEventListener('click', () => {
-            router.navigate(`/detail/${id}`)
-        })
-        link.innerText = 'More about this picture'
+    link.addEventListener('click', () => {
+        router.navigate(`/detail/${id}`)
+    })
+    link.innerText = 'More about this picture'
 
-        wrapper.appendChild(img)
-        wrapper.appendChild(link)
-        parent.appendChild(wrapper)
+    wrapper.appendChild(img)
+    wrapper.appendChild(link)
+    parent.appendChild(wrapper)
 }
 
 // export class RenderMaster {

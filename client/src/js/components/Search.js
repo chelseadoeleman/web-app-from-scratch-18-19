@@ -1,4 +1,4 @@
-import { RenderMaster} from './RenderImages'
+import { RenderImages} from './RenderImages'
 import { getUnsplashSearchUrl } from '../helpers/getUnsplashUrl'
 import { Fetcher } from './Fetcher'
 
@@ -38,6 +38,14 @@ export class Search {
 
         const url = getUnsplashSearchUrl(value)
         const { results } = await new Fetcher({ url, options: {headers: {'X-Ratelimit-Limit': '1000'}} }).fetch()
-        results.forEach((result) => RenderMaster(result, photos, router))
+        console.log(results)
+        if (results.length === 0) {
+            const message = document.createElement('p')
+            message.classList.add('no-images')
+            message.innerHTML= 'No images can be found'
+            photos.append(message)
+        } else {
+            results.forEach((result) => RenderImages(result, photos, router))
+        }
     }
 }
