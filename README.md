@@ -190,13 +190,13 @@ I also improved my previous actor diagram and interaction diagram, altough I sti
 - [x] Set up a Router.
 - [x] Make an actor diagram.
 - [x] Make an interaction diagram.
-- [ ] Add Classes to the actor diagram. 
-- [ ] Render Detailview by removing the index render. 
+- [x] Add Classes to the actor diagram. 
+- [x] Render Detailview by removing the index render. 
 - [ ] Set up a template engine. 
 - [x] Write a readme.md
 
 ## Checklist week 3
-- [ ] Look into extending some Classes
+- [ ] Extending some Classes
 - [x] Make functions smaller
 - [x] Store data for the detailpage in localStorage.
 - [x] Update actor and interaction diagram.
