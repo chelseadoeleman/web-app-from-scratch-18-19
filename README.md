@@ -87,7 +87,24 @@ The Application also has a search function, to get the images you would like to 
 
 Here is an abstract overview  of what happens in the application.
 
-![Actor](./docs/actor2.0.png)
+<details>
+  <summary> Version 1</summary>
+
+  !![Actor](./docs/actordiagram.png)
+</details>
+
+<details>
+  <summary> Version 2</summary>
+
+  ![Actor](./docs/actor2.0.png)
+</details>
+
+<details open>
+  <summary> Version 3</summary>
+
+  ![Actor](./docs/actor3.0.png)
+</details>
+
 
 ## Learning process
 
