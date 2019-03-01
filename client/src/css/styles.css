@@ -119,7 +119,7 @@ section {
     overflow: auto;
     overflow-y: hidden;
     max-height: 95vh;
-    max-width: 40vw;
+    width: 40vw;
     margin: 0 2em;
 }
 
@@ -190,7 +190,7 @@ ul li {
 
 .no-images {
     position: absolute;
-    left: 28%;
+    left: 20%;
     top: 50%;
     z-index: 5;
     color: rgb(166, 190, 221);
